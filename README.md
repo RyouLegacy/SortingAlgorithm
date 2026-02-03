@@ -28,7 +28,7 @@
 
 ---
 
-### 2. Biểu đồ (cột) thời gian thực hiện
+### 2. Biểu đồ thời gian thực hiện
 
 *(Biểu đồ được xây dựng từ bảng dữ liệu trên)*  
 ![image](resource/graph.png)
