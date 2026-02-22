@@ -49,7 +49,7 @@ Thêm một nhận xét nữa là những thuật toán ổn định trên các 
 
 ---
 
-## III. Thông tin chi tiết – link github, trong repo github cần có
+## III. Thông tin chi tiết
 
 Link github repo: https://github.com/RyouLegacy/SortingAlgorithm.git  
 

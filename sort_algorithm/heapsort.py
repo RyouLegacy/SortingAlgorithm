@@ -1,9 +1,10 @@
+import numpy as np
 from typing import *
 
-def run(array: List) -> List:
+def run(array: np.ndarray) -> np.ndarray:
 
     # Hàm heapify: đảm bảo cây con tại chỉ số i thỏa mãn tính chất max-heap
-    def heapify(array: List, n: int, i: int):
+    def heapify(array: np.ndarray, n: int, i: int):
         largest = i                 # Giả sử node hiện tại là lớn nhất
         left_child = 2 * i + 1      # Chỉ số con trái
         right_child = 2 * i + 2     # Chỉ số con phải
@@ -26,7 +27,7 @@ def run(array: List) -> List:
         return
 
     # Hàm heap sort chính
-    def heap_sort(array: List):
+    def heap_sort(array: np.ndarray):
         length = len(array)
 
         # Xây dựng max-heap từ mảng ban đầu

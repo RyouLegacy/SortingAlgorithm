@@ -1,5 +1,5 @@
 import time, testcase
-import sort_algorithm.np as np
+import numpy as np
 import sort_algorithm.heapsort as heapsort 
 import sort_algorithm.quicksort as quicksort 
 import sort_algorithm.mergesort as mergesort
@@ -29,9 +29,16 @@ for sort_type in range(4):
     for current_dataset in dataset:
         counter += 1
 
+        # IMPORTANT: copy dataset because numpy arrays are mutable
+        data_copy = current_dataset.copy()
+
         # Bắt đầu đo thời gian
         current_tick = time.time()
-        object[1].run(current_dataset)
+
+        if object[0] == "Numpy Sort":
+            object[1].sort(data_copy)
+        else:
+            object[1].run(data_copy)
 
         # Tính thời gian chạy (ms)
         runtime = int((time.time() - current_tick) * 1000)

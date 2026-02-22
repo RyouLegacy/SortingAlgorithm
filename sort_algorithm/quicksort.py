@@ -1,7 +1,8 @@
 import random
+import numpy as np
 from typing import *
 
-def run(array: List) -> List:
+def run(array: np.ndarray) -> np.ndarray:
     # Kiểm tra mảng đã được sắp xếp tăng dần hay chưa
     is_increasing = all(array[i] <= array[i + 1] for i in range(len(array) - 1))
     if is_increasing:
@@ -11,11 +12,11 @@ def run(array: List) -> List:
     is_decreasing = all(array[i] >= array[i + 1] for i in range(len(array) - 1))
     if is_decreasing:
         # Đảo ngược mảng để được thứ tự tăng dần
-        array.reverse()
+        array = array[::-1]
         return
 
     # Hàm chia mảng (partition) dùng pivot ngẫu nhiên
-    def divide(array: List, L: int, R: int) -> int:
+    def divide(array: np.ndarray, L: int, R: int) -> int:
         # Chọn pivot ngẫu nhiên và đưa về cuối đoạn
         pivot_index = random.randint(L, R)
         array[pivot_index], array[R] = array[R], array[pivot_index]
@@ -36,7 +37,7 @@ def run(array: List) -> List:
         return current
 
     # Thuật toán Quick Sort đệ quy
-    def quick_sort(array: List, L: int, R: int):
+    def quick_sort(array: np.ndarray, L: int, R: int):
         # Điều kiện dừng đệ quy
         if L >= R:
             return

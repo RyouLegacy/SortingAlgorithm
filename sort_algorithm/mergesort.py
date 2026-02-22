@@ -1,17 +1,18 @@
+import numpy as np
 from typing import *
 
-def run(array: List) -> List:
+def run(array: np.ndarray) -> np.ndarray:
 
     # Thuật toán Merge Sort (sắp xếp trộn)
-    def merge_sort(array: List):
+    def merge_sort(array: np.ndarray):
         # Điều kiện dừng: mảng chỉ còn 1 phần tử
         if len(array) == 1:
             return
 
         # Chia mảng thành hai nửa
         mid = len(array) >> 1
-        left_array = array[:mid]
-        right_array = array[mid:]
+        left_array = array[:mid].copy()
+        right_array = array[mid:].copy()
 
         # Đệ quy sắp xếp hai nửa
         merge_sort(left_array)
